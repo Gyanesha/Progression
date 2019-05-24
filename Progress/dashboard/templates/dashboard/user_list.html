@@ -1,11 +1,37 @@
-{% for u in users %}
-	<p>{{u.user_name}}<p>
-	<p>{{u.college}}<p>
-	<p>{{u.about_myself}}<p>
-{% endfor %}
+{% load static %}
 
 <html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+
+
+
+
 <body>
-	<p>{{users}}</p>
+
+
+
+<div>
+    <h1><a href="/">Progress Dashboard</a></h1>
+</div>
+
+<div class="page-header">
+            <a href="{% url 'user_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Users Enrolled</a></h1>
+        </div>
+
+{% for u in users %}
+<div class="post">
+	<p>Username :{{u.user_name}}<p>
+	<h2><a href="/">College :{{u.college}}</a></h2>
+	<p>About Myself:{{u.about_myself}}<p>
+</div>
+{% endfor %}
 </body>
 </html>
