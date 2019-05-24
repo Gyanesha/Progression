@@ -1,5 +1,11 @@
+{% for u in users %}
+	<p>{{u.user_name}}<p>
+	<p>{{u.college}}<p>
+	<p>{{u.about_myself}}<p>
+{% endfor %}
+
 <html>
 <body>
-	<p>Hi</p>
+	<p>{{users}}</p>
 </body>
 </html>
