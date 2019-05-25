@@ -8,6 +8,7 @@ from django.shortcuts import redirect
 def user_list(request):
 	return render(request, 'dashboard/user_list.html',{"users": User.objects.all})
 
+@login_required
 def user_new(request):
 	if request.method == "POST" :
 		form = UserForm(request.POST)
