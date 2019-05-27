@@ -1,11 +1,19 @@
 {% extends 'dashboard/base.html' %}
 
+
+
+
+<div class="row">
 {% block content %}
 {% for u in users %}
 <div class="post">
-	<p>Username :{{u.user_name}}<p>
-	<h2><a href="/">College :{{u.college}}</a></h2>
-	<p>About Myself:{{u.about_myself}}<p>
+    <div class="column">
+	<h2><a herf="/">Username :{{u.user_name}}</a></h2>
+	<p>College :{{u.college}}</p>
+    <p>Score :{{u.score}}</p>
+	<p>About Myself:{{u.about_myself}}</p>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
+</div>
